@@ -4,9 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MatveevWPFSessia1"
-        mc:Ignorable="d" 
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" Icon="/Resourse/icon.ico" FontFamily="Comic Sans MS"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Frame Name="frame" >
+            
+        </Frame>
     </Grid>
 </Window>
