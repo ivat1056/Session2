@@ -8,7 +8,24 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage">
 
-    <Grid>
-        
+    <Grid  x:Name="Authorization" Margin="0,75,0,0">
+
+        <StackPanel Margin="50,35,50,0">
+            <StackPanel>
+                <TextBlock Text="Авторизация" Style="{StaticResource TBStyle}"/>
+            </StackPanel>
+            <StackPanel>
+                <GroupBox Header="Введите логин">
+                    <TextBox Name="Login" Text="admin"/>
+
+                </GroupBox>
+                <GroupBox Header="Введите пароль">
+                    <PasswordBox Name="Password" Password="admin"/>
+                </GroupBox>
+            </StackPanel>
+            <Button Name="btn_In"  Content="Авторизоваться"  Click="btn_In_Click" Style="{StaticResource btnstyle1}"/>
+            <Button Name="guest"  Content="Войти гостем"  Click="guest_Click" Style="{StaticResource btnstyle1}"/>
+            <TextBlock x:Name="tbNewCode" Text="Повторно можно будет войти через 10 секунд" FontSize="22" TextWrapping="Wrap" Visibility="Collapsed" Style="{StaticResource TBStyle}" />
+        </StackPanel>
     </Grid>
 </Page>

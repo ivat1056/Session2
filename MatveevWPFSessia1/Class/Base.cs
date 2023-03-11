@@ -8,5 +8,6 @@ namespace MatveevWPFSessia1.Class
 {
     internal class Base
     {
+        public static EP ep;
     }
 }

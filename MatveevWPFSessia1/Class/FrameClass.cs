@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace MatveevWPFSessia1.Class
+namespace MatveevWPFSessia1
 {
     internal class FrameClass
     {

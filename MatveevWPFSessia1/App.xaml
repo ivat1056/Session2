@@ -4,6 +4,48 @@
              xmlns:local="clr-namespace:MatveevWPFSessia1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Window" x:Key="BColor">
+            <!--задний фон-->
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.2,1" StartPoint="0.5,0">
+                        <GradientStop Color="#ffffff" Offset="0"/>
+                        <GradientStop Color="#ffffff" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Page" x:Key="PageBColor">
+            <!--задний фон-->
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.2,0">
+                        <GradientStop Color="#ffffff" Offset="0"/>
+                        <GradientStop Color="#ffffff" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TBStyle" TargetType="TextBlock">
+            <!--текст-->
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#498c51"/>
+        </Style>
+
+        <Style x:Key="btnstyle1" TargetType="Button">
+            <!--кнопки-->
+            <Style.Setters>
+                <Setter Property="Background" Value="#498c51"/>
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="Height" Value="auto"/>
+                <Setter Property="Width" Value="250"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Style.Setters>
+        </Style>
     </Application.Resources>
 </Application>

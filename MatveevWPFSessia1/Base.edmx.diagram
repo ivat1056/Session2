@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="09928a6e5df748e09f3ef39188f4ac99" Name="Diagram1">
+        <EntityTypeShape EntityType="practic15Model.Adress" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.Order" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.OrderProduct" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.OrderStatus" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.ProductCategory" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.ProductManufacturer" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.Role" Width="1.5" PointX="1.5" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.TheSupplier" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.UnitOfMeasurement" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="practic15Model.User" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
+        <AssociationConnector Association="practic15Model.FK_Order_Adress" ManuallyRouted="false" />
+        <AssociationConnector Association="practic15Model.FK__OrderProd__Order__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="practic15Model.FK_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="practic15Model.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="practic15Model.FK_OrderProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="practic15Model.FK_Product_ProductCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="practic15Model.FK_Product_ProductManufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="practic15Model.FK_Product_TheSupplier" ManuallyRouted="false" />
+        <AssociationConnector Association="practic15Model.FK_Product_UnitOfMeasurement" ManuallyRouted="false" />
+        <AssociationConnector Association="practic15Model.FK__User__UserRole__398D8EEE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

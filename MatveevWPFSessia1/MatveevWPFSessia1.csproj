@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +64,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Adress.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderProduct.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderStatus.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CAPTCHA.xaml.cs">
+      <DependentUpon>CAPTCHA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Correct.xaml.cs">
+      <DependentUpon>Correct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManufacturer.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheSupplier.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitOfMeasurement.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +116,30 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Base.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Base.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Base.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Class\Base.cs" />
     <Compile Include="Class\FrameClass.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\CAPTCHA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Correct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,6 +166,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Base.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Base.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Base.edmx.diagram">
+      <DependentUpon>Base.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,22 +186,36 @@
   <ItemGroup>
     <Resource Include="Resourse\picture.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Base.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Base.Context.cs</LastGenOutput>
+      <DependentUpon>Base.edmx</DependentUpon>
+    </Content>
+    <Content Include="Base.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Base.edmx</DependentUpon>
+      <LastGenOutput>Base.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resourse\icon.ico" />
     <Resource Include="Resourse\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imags\A346R4.jpg" />
-    <Resource Include="Imags\A543T6.jpg" />
-    <Resource Include="Imags\B730E2.jpg" />
-    <Resource Include="Imags\D419T7.png" />
-    <Resource Include="Imags\F719R5.jpg" />
-    <Resource Include="Imags\G278R6.png" />
-    <Resource Include="Imags\H452A3.png" />
-    <Resource Include="Imags\R259E6.jpg" />
-    <Resource Include="Imags\T564P5.jpg" />
-    <Resource Include="Imags\А112Т4.jpg" />
+    <Resource Include="images\A346R4.jpg" />
+    <Resource Include="images\A543T6.jpg" />
+    <Resource Include="images\B730E2.jpg" />
+    <Resource Include="images\D419T7.png" />
+    <Resource Include="images\F719R5.jpg" />
+    <Resource Include="images\G278R6.png" />
+    <Resource Include="images\H452A3.png" />
+    <Resource Include="images\R259E6.jpg" />
+    <Resource Include="images\T564P5.jpg" />
+    <Resource Include="images\А112Т4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
