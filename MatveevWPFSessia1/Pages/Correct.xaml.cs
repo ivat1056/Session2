@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatveevWPFSessia1.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,19 @@ namespace MatveevWPFSessia1.Pages
     /// </summary>
     public partial class Correct : Page
     {
-        public Correct()
+         
+        public Correct(int Role2)
         {
             InitializeComponent();
+            lvProduct.ItemsSource = Base.ep.Product.ToList();
+            int RoleU = Role2;
+            
+
+        }
+
+        private void lvProduct_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

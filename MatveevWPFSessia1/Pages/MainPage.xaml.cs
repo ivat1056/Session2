@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatveevWPFSessia1.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace MatveevWPFSessia1.Pages
         public static bool correct;
         DispatcherTimer disTimer = new DispatcherTimer();
         int countTime;
+        int Role = 0;
         public MainPage(bool c, int k)
         {
             InitializeComponent();
@@ -59,7 +61,9 @@ namespace MatveevWPFSessia1.Pages
 
         private void btn_In_Click(object sender, RoutedEventArgs e)
         {
-            if (Login.Text == "admin")
+            User user1 = Base.ep.User.FirstOrDefault(z => z.UserLogin == Login.Text);
+
+            if (user1 != null)
             {
                 if (countNumber > 0)
                 {
@@ -74,7 +78,20 @@ namespace MatveevWPFSessia1.Pages
                 }
                 else
                 {
-                    if (Password.Password == "admin")
+                    User user2 = Base.ep.User.FirstOrDefault(z => z.UserPassword == Password.Password);
+                    if(user2.UserRole == 1)
+                    {
+                        Role = 1;
+                    }
+                    if (user2.UserRole == 2)
+                    {
+                        Role = 2;
+                    }
+                    if (user2.UserRole == 3)
+                    {
+                        Role = 3;
+                    }
+                    if (user2 != null)
                     {
                         correct = true;
                     }
@@ -87,7 +104,7 @@ namespace MatveevWPFSessia1.Pages
 
                     if (correct == true)
                     {
-                        FrameClass.frame.Navigate(new Correct());
+                        FrameClass.frame.Navigate(new Correct(Role));
                         Authorization.Visibility = Visibility.Collapsed;
                     }
                     else
@@ -120,7 +137,7 @@ namespace MatveevWPFSessia1.Pages
 
         private void guest_Click(object sender, RoutedEventArgs e)
         {
-            FrameClass.frame.Navigate(new Correct());
+            FrameClass.frame.Navigate(new Correct(Role));
         }
     }
 }

@@ -13,7 +13,7 @@
         </Frame>
         <StackPanel Orientation="Horizontal" Margin="20,0,0,450">
         <Image x:Name="Logo"  Height="100" Margin="0,0,50,0" Source="/Resourse/logo.png"  />
-        <TextBlock Text="Пиши-стирай" FontSize="36"  Style="{StaticResource ResourceKey=TBStyle}" />
+            <TextBlock Text="ООО «Пиши-стирай»" FontSize="36"  Style="{StaticResource ResourceKey=TBStyle}" />
 
         </StackPanel>
     </Grid>

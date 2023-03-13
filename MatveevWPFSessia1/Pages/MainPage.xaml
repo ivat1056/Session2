@@ -16,11 +16,11 @@
             </StackPanel>
             <StackPanel>
                 <GroupBox Header="Введите логин">
-                    <TextBox Name="Login" Text="admin"/>
+                    <TextBox Name="Login" Text="loginDEpxl2018"/>
 
                 </GroupBox>
                 <GroupBox Header="Введите пароль">
-                    <PasswordBox Name="Password" Password="admin"/>
+                    <PasswordBox Name="Password" Password="P6h4Jq"/>
                 </GroupBox>
             </StackPanel>
             <Button Name="btn_In"  Content="Авторизоваться"  Click="btn_In_Click" Style="{StaticResource btnstyle1}"/>
