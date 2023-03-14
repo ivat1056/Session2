@@ -57,7 +57,7 @@
                                 <TextBlock Text="Цена: " FontWeight="Bold"/>
                                 <TextBlock Text="{Binding ProductCost}"/>
                                 </StackPanel>
-
+                                <Button Name="FormAnOrder" Click="FormAnOrder_Click" Content="Сформировать заказ" Style="{StaticResource btnstyle1}" />
                             </StackPanel>
                             <TextBlock Text="{Binding CountinStock, StringFormat={}Остаток: {0} шт}" Grid.Column="2"/>
                         </Grid>
@@ -65,6 +65,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Name="FormAnOrder" Content="Сформировать заказ" Style="{StaticResource btnstyle1}" />
+        <Button Name="Basket" Grid.Row="3" Click="Basket_Click" Content="Корина" Style="{StaticResource btnstyle1}" Margin="275,28,275,5" />
     </Grid>
 </Page>

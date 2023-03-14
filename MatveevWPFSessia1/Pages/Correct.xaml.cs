@@ -21,7 +21,8 @@ namespace MatveevWPFSessia1.Pages
     /// </summary>
     public partial class Correct : Page
     {
-         
+        List<BasketClass> basket = new List<BasketClass>();
+        User user;
         public Correct(int Role2)
         {
             InitializeComponent();
@@ -34,6 +35,32 @@ namespace MatveevWPFSessia1.Pages
         private void lvProduct_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void Basket_Click(object sender, RoutedEventArgs e)
+        {
+            FrameClass.frame.Navigate(new PageBasket(basket, user));
+        }
+
+        private void FormAnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Product x = (Product)lvProduct.SelectedItem;
+            bool stock = false; 
+            foreach (BasketClass productBasket in basket)
+            {
+                if (productBasket.product == x) 
+                {
+                    productBasket.count = productBasket.count += 1;
+                    stock = true;
+                }
+            }
+            if (!stock) 
+            {
+                BasketClass product = new BasketClass();
+                product.product = x;
+                product.count = 1;
+                basket.Add(product);
+            }
         }
     }
 }

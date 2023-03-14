@@ -72,6 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
+    <Compile Include="Class\BasketClass.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
@@ -86,6 +87,9 @@
     </Compile>
     <Compile Include="Pages\Correct.xaml.cs">
       <DependentUpon>Correct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageBasket.xaml.cs">
+      <DependentUpon>PageBasket.xaml</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>Base.tt</DependentUpon>
@@ -141,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageBasket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
