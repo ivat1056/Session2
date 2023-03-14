@@ -10,7 +10,7 @@
     <Page.Resources>
         <BitmapImage x:Key="defaultImage" UriSource="\Resourse\picture.png"/>
     </Page.Resources>
-    <Grid Margin="0,75,0,0" >
+    <Grid Margin="0,20,0,0" >
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
             <RowDefinition Height="5*"/>
@@ -19,8 +19,8 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <TextBlock Text="Корзина" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock x:Name="tbFIO"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
+            <TextBlock Text="Корзина" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,74,0,0"/>
+            <TextBlock x:Name="tbFIO"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0"/>
         </Grid>
         <ListView x:Name="lvProduct" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <ListView.ItemContainerStyle>
@@ -43,13 +43,13 @@
                                 <TextBlock Text="{Binding product.ProductArticleNumber, StringFormat={}Артикул: {0}}"/>
                                 <TextBlock Text="{Binding product.UnitOfMeasurement.Name, StringFormat={}Ед. измерения: {0}}"/>
                                 <TextBlock Text="{Binding product.ProductCategory.Name, StringFormat={}Категория товара: {0}}" TextWrapping="Wrap"/>
-                                <TextBlock Text="{Binding product.UnitOfMeasurement.Name, StringFormat={}Производитель: {0}}" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding product.ProductManufacturer.Name, StringFormat={}Производитель: {0}}" TextWrapping="Wrap"/>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Цена: "/>
                                     <TextBlock Text="{Binding product.ProductCost, StringFormat={}{0:F2}}" TextDecorations="{Binding textDecoration}"/>
                                     <TextBlock Text=" "/>
-                                    <!--<TextBlock Text="{Binding product.costWithDiscountString}"/>-->
-                                    <!--<TextBlock Text="{Binding product.ProductDiscountAmount, StringFormat={}  Скидка: {0}%}"/>-->
+                                    <TextBlock Text="{Binding product.costWithDiscount}"/>
+                                    <TextBlock Text="{Binding product.ProductDiscountAmount, StringFormat={}  Скидка: {0}%}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Количество: "/>
