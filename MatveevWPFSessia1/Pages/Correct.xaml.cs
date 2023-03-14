@@ -27,7 +27,7 @@ namespace MatveevWPFSessia1.Pages
         public Correct(int Role2, BasketClass basket )
         {
             InitializeComponent();
-            lvProduct.ItemsSource = Base.ep.Product.ToList();
+            lvProduct.ItemsSource = Base.ep.Product.ToList(); // 
             int RoleU = Role2;
             basket = basket;
             cbSort.SelectedIndex = 0;
