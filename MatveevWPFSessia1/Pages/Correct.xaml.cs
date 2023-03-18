@@ -21,18 +21,26 @@ namespace MatveevWPFSessia1.Pages
     /// </summary>
     public partial class Correct : Page
     {
-        List<BasketClass> basket12 = new List<BasketClass>();
+        List<BasketClass> basket12;
         User user;
-        BasketClass basket;
-        public Correct(int Role2, BasketClass basket )
+        public Correct(int Role2, List<BasketClass> basket)
         {
             InitializeComponent();
             lvProduct.ItemsSource = Base.ep.Product.ToList(); // 
             int RoleU = Role2;
-            basket = basket;
+            basket12 = basket;
             cbSort.SelectedIndex = 0;
             cbFilt.SelectedIndex = 0;
 
+        }
+        public Correct(int Role2)
+        {
+            InitializeComponent();
+            lvProduct.ItemsSource = Base.ep.Product.ToList(); // 
+            int RoleU = Role2;
+            cbSort.SelectedIndex = 0;
+            cbFilt.SelectedIndex = 0;
+            basket12 = new List<BasketClass>();
         }
 
         private void lvProduct_PreviewMouseUp(object sender, MouseButtonEventArgs e)
@@ -87,10 +95,21 @@ namespace MatveevWPFSessia1.Pages
                 }
                 products = products.Distinct().ToList();
             }
-            //if (cbFilt.SelectedIndex != 0 && cbFilt.SelectedIndex != 0)
-            //{
-            //    products = products.Where(x => x.ProductCategory.Name == cbFilt.SelectedValue).ToList();
-            //}
+            if (cbFilt.SelectedIndex > 0) 
+            {
+                switch (cbFilt.SelectedIndex)
+                {
+                    case 1:
+                        products = products.Where(x => x.ProductDiscountAmount > 0 && x.ProductDiscountAmount < 9.99).ToList();
+                        break;
+                    case 2:
+                        products = products.Where(x => x.ProductDiscountAmount > 10 && x.ProductDiscountAmount < 14.99).ToList();
+                        break;
+                    case 3:
+                        products = products.Where(x => x.ProductDiscountAmount > 15).ToList();
+                        break;
+                }
+            }
             switch (cbSort.SelectedIndex)
             {
                 case 1:

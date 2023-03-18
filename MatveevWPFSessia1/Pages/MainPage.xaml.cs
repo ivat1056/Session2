@@ -27,7 +27,6 @@ namespace MatveevWPFSessia1.Pages
         DispatcherTimer disTimer = new DispatcherTimer();
         int countTime;
         int Role = 0;
-        BasketClass basket;
         public MainPage(bool c, int k)
         {
             InitializeComponent();
@@ -104,7 +103,7 @@ namespace MatveevWPFSessia1.Pages
 
                     if (correct == true)
                     {
-                        FrameClass.frame.Navigate(new Correct(Role, basket));
+                        FrameClass.frame.Navigate(new Correct(Role));
                         Authorization.Visibility = Visibility.Collapsed;
                     }
                     else
@@ -137,7 +136,7 @@ namespace MatveevWPFSessia1.Pages
 
         private void guest_Click(object sender, RoutedEventArgs e)
         {
-            FrameClass.frame.Navigate(new Correct(Role, basket));
+            FrameClass.frame.Navigate(new Correct(Role));
         }
     }
 }
